@@ -29,13 +29,13 @@ const getCarsByYear = (year) => {
   return axios(config);
 };
 
-const getCarsbySort = (sort)=>{
-    const config = {
-        url:` http://localhost:3001/cars?_sort=price&_order=${sort}`,
-        method: "GET",
-      };
-      return axios(config);
-}
+const getCarsbySort = (sort) => {
+  const config = {
+    url: ` http://localhost:3001/cars?_sort=price&_order=${sort}`,
+    method: "GET",
+  };
+  return axios(config);
+};
 
 const Car = () => {
   const [cars, setCars] = useState([]);
@@ -46,6 +46,7 @@ const Car = () => {
   }, []);
 
   const handleGetCars = () => {
+    setLoading(true);
     return getCars()
       .then((res) => {
         setCars(res.data);
@@ -64,17 +65,22 @@ const Car = () => {
   }
 
   const handleFilter = (year) => {
-    return getCarsByYear(year).then((res) => {
-      setCars(res.data);
-      setLoading(false);
-    });
+    setLoading(true);
+    return getCarsByYear(year)
+      .then((res) => {
+        setCars(res.data);
+        setLoading(false);
+      })
+      .catch((err) => console.log(err));
   };
 
   const handleSort = (sort) => {
-    return getCarsbySort(sort).then((res) => {
-      setCars(res.data);
-      setLoading(false);
-    });
+    return getCarsbySort(sort)
+      .then((res) => {
+        setCars(res.data);
+        setLoading(false);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
