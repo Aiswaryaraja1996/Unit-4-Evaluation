@@ -10,9 +10,18 @@ const getCars = () => {
   return axios(config);
 };
 
+const getCarsByYear = (year) => {
+    const config = {
+        url: `http://localhost:3001/cars?year=${year}`,
+        method: "GET",
+      };
+    return axios(config);
+}
+
 const Car = () => {
   const [cars, setCars] = useState([]);
   const [isLoading, setLoading] = useState(true);
+//   const [year,setYears] = useState([]);
 
   useEffect(() => {
     handleGetCars();
@@ -22,6 +31,7 @@ const Car = () => {
     return getCars()
       .then((res) => {
         setCars(res.data);
+        // setYears(res.data.year);
         setLoading(false);
       })
       .catch((err) => console.log(err));
@@ -35,9 +45,34 @@ const Car = () => {
     );
   }
 
+  const handleFilter = (year) => {
+        return getCarsByYear(year).then((res)=>{
+            setCars(res.data);
+            setLoading(false);
+        })
+  }
+
   return (
     <div>
       <h1>CARS</h1>
+      <div>
+        <p>Year</p>
+        {cars.map((item) => (
+          <button onClick={()=>{handleFilter(item.year)}}>{item.year}</button>
+        ))}
+      </div>
+      <div>
+        <p>Model</p>
+        <button>HatchBack</button>
+        <button>Sedan</button>
+        <button>SUV</button>
+      </div>
+      <div>
+          <p>Sort By Price</p>
+          <button>Asc</button>
+          <button>Desc</button>
+      </div>
+
       <div>
         {cars.map((item) => (
           <CarCard data={item}></CarCard>
