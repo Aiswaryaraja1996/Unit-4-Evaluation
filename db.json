@@ -3,7 +3,7 @@
         {
             "id": 1,
             "name": "Nexon",
-            "type": "SUv",
+            "type": "SUV",
             "year": 2016,
             "price": 1000000,
             "image": "https://img.gaadicdn.com/images/car-images/360x240/Tata/Nexon/7297/1579769288048/222_Daytona-Grey_323941.jpg"
@@ -11,7 +11,7 @@
         {
             "id": 2,
             "name": "Swift",
-            "type": "SUv",
+            "type": "Sedan",
             "year": 2012,
             "price": 800000,
             "image": "https://img.gaadicdn.com/images/car-images/360x240/Tata/Nexon/7297/1579769288048/222_Daytona-Grey_323941.jpg"
@@ -19,28 +19,28 @@
         {
             "id": 3,
             "name": "S-Cross",
-            "type": "SUv",
+            "type": "SUV",
             "year": 2017,
             "price": 1300000,
             "image": "https://img.gaadicdn.com/images/car-images/360x240/Tata/Nexon/7297/1579769288048/222_Daytona-Grey_323941.jpg"
         },
         {
-            "id": 1,
+            "id": 4,
             "name": "Harrier",
-            "type": "SUv",
+            "type": "HatchBack",
             "year": 2018,
             "price": 2500000,
             "image": "https://img.gaadicdn.com/images/car-images/360x240/Tata/Nexon/7297/1579769288048/222_Daytona-Grey_323941.jpg"
         },
         {
-            "id": 1,
+            "id": 5,
             "name": "I10",
-            "type": "SUv",
+            "type": "HatchBack",
             "year": 2011,
             "price": 900000,
             "image": "https://img.gaadicdn.com/images/car-images/360x240/Tata/Nexon/7297/1579769288048/222_Daytona-Grey_323941.jpg"
         }
 
     ],
-    "order":[]
+    "orders":[]
 }
