@@ -11,17 +11,35 @@ const getCars = () => {
 };
 
 const getCarsByYear = (year) => {
+  if (year) {
+    var config = {
+      url: `http://localhost:3001/cars`,
+      method: "GET",
+      params: {
+        year: year,
+      },
+    };
+  } else {
+    var config = {
+      url: `http://localhost:3001/cars`,
+      method: "GET",
+    };
+  }
+
+  return axios(config);
+};
+
+const getCarsbySort = (sort)=>{
     const config = {
-        url: `http://localhost:3001/cars?year=${year}`,
+        url:` http://localhost:3001/cars?_sort=price&_order=${sort}`,
         method: "GET",
       };
-    return axios(config);
+      return axios(config);
 }
 
 const Car = () => {
   const [cars, setCars] = useState([]);
   const [isLoading, setLoading] = useState(true);
-//   const [year,setYears] = useState([]);
 
   useEffect(() => {
     handleGetCars();
@@ -31,7 +49,7 @@ const Car = () => {
     return getCars()
       .then((res) => {
         setCars(res.data);
-        // setYears(res.data.year);
+
         setLoading(false);
       })
       .catch((err) => console.log(err));
@@ -46,20 +64,60 @@ const Car = () => {
   }
 
   const handleFilter = (year) => {
-        return getCarsByYear(year).then((res)=>{
-            setCars(res.data);
-            setLoading(false);
-        })
-  }
+    return getCarsByYear(year).then((res) => {
+      setCars(res.data);
+      setLoading(false);
+    });
+  };
+
+  const handleSort = (sort) => {
+    return getCarsbySort(sort).then((res) => {
+      setCars(res.data);
+      setLoading(false);
+    });
+  };
 
   return (
     <div>
       <h1>CARS</h1>
       <div>
         <p>Year</p>
-        {cars.map((item) => (
-          <button onClick={()=>{handleFilter(item.year)}}>{item.year}</button>
-        ))}
+        <button
+          onClick={() => {
+            handleFilter();
+          }}
+        >
+          All
+        </button>
+
+        <button
+          onClick={() => {
+            handleFilter(2016);
+          }}
+        >
+          2016
+        </button>
+        <button
+          onClick={() => {
+            handleFilter(2012);
+          }}
+        >
+          2012
+        </button>
+        <button
+          onClick={() => {
+            handleFilter(2017);
+          }}
+        >
+          2017
+        </button>
+        <button
+          onClick={() => {
+            handleFilter(2011);
+          }}
+        >
+          2011
+        </button>
       </div>
       <div>
         <p>Model</p>
@@ -68,9 +126,21 @@ const Car = () => {
         <button>SUV</button>
       </div>
       <div>
-          <p>Sort By Price</p>
-          <button>Asc</button>
-          <button>Desc</button>
+        <p>Sort By Price</p>
+        <button
+          onClick={() => {
+            handleSort("asc");
+          }}
+        >
+          Asc
+        </button>
+        <button
+          onClick={() => {
+            handleSort("desc");
+          }}
+        >
+          Desc
+        </button>
       </div>
 
       <div>

@@ -27,26 +27,58 @@ const CarCard = ({ data }) => {
   };
 
   return (
-    <div>
-      <div>
-        <h2>{data.name}</h2>
-        <img src={data.image} alt={data.name}></img>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        width: "40%",
+        border: "1px solid black",
+        margin: "2rem auto",
+        padding: "1rem",
+      }}
+    >
+      <h2>{data.name}</h2>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div>
+          <img src={data.image} alt={data.name}></img>
+        </div>
+        <div>
+          <p>Price : Rs.{data.price}</p>
+          <p>Model : {data.type}</p>
+          <p>Year : {data.year}</p>
+        </div>
       </div>
-      <div>
-        <p>Price : Rs.{data.price}</p>
-        <p>Model : {data.type}</p>
-        <p>Year : {data.year}</p>
-      </div>
+
       <div>
         <button onClick={() => setBuy(true)}>BUY</button>
       </div>
+
       {isBuy && (
         <form onSubmit={handleSubmit}>
-          <label>Name</label>
-          <input type="text" name="name" onChange={handleInput}></input>
           <br />
-          <label>Phone</label>
-          <input type="text" name="phone" onChange={handleInput}></input>
+
+          <input
+            type="text"
+            name="name"
+            onChange={handleInput}
+            placeholder="Name"
+          ></input>
+          <br />
+          <br />
+
+          <input
+            type="text"
+            name="phone"
+            onChange={handleInput}
+            placeholder="Phone"
+          ></input>
+          <br />
           <br />
           <button>Submit</button>
         </form>
