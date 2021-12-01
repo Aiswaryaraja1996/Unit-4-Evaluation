@@ -1,46 +1,61 @@
 {
-    "cars": [
-        {
-            "id": 1,
-            "name": "Nexon",
-            "type": "SUV",
-            "year": 2016,
-            "price": 1000000,
-            "image": "https://img.gaadicdn.com/images/car-images/360x240/Tata/Nexon/7297/1579769288048/222_Daytona-Grey_323941.jpg"
-        },
-        {
-            "id": 2,
-            "name": "Swift",
-            "type": "Sedan",
-            "year": 2012,
-            "price": 800000,
-            "image": "https://img.gaadicdn.com/images/car-images/360x240/Tata/Nexon/7297/1579769288048/222_Daytona-Grey_323941.jpg"
-        },
-        {
-            "id": 3,
-            "name": "S-Cross",
-            "type": "SUV",
-            "year": 2017,
-            "price": 1300000,
-            "image": "https://img.gaadicdn.com/images/car-images/360x240/Tata/Nexon/7297/1579769288048/222_Daytona-Grey_323941.jpg"
-        },
-        {
-            "id": 4,
-            "name": "Harrier",
-            "type": "HatchBack",
-            "year": 2018,
-            "price": 2500000,
-            "image": "https://img.gaadicdn.com/images/car-images/360x240/Tata/Nexon/7297/1579769288048/222_Daytona-Grey_323941.jpg"
-        },
-        {
-            "id": 5,
-            "name": "I10",
-            "type": "HatchBack",
-            "year": 2011,
-            "price": 900000,
-            "image": "https://img.gaadicdn.com/images/car-images/360x240/Tata/Nexon/7297/1579769288048/222_Daytona-Grey_323941.jpg"
-        }
-
-    ],
-    "orders":[]
+  "cars": [
+    {
+      "id": 1,
+      "name": "Nexon",
+      "type": "SUV",
+      "year": 2016,
+      "price": 1000000,
+      "image": "https://img.gaadicdn.com/images/car-images/360x240/Tata/Nexon/7297/1579769288048/222_Daytona-Grey_323941.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Swift",
+      "type": "Sedan",
+      "year": 2012,
+      "price": 800000,
+      "image": "https://img.gaadicdn.com/images/car-images/360x240/Tata/Nexon/7297/1579769288048/222_Daytona-Grey_323941.jpg"
+    },
+    {
+      "id": 3,
+      "name": "S-Cross",
+      "type": "SUV",
+      "year": 2017,
+      "price": 1300000,
+      "image": "https://img.gaadicdn.com/images/car-images/360x240/Tata/Nexon/7297/1579769288048/222_Daytona-Grey_323941.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Harrier",
+      "type": "HatchBack",
+      "year": 2018,
+      "price": 2500000,
+      "image": "https://img.gaadicdn.com/images/car-images/360x240/Tata/Nexon/7297/1579769288048/222_Daytona-Grey_323941.jpg"
+    },
+    {
+      "id": 5,
+      "name": "I10",
+      "type": "HatchBack",
+      "year": 2011,
+      "price": 900000,
+      "image": "https://img.gaadicdn.com/images/car-images/360x240/Tata/Nexon/7297/1579769288048/222_Daytona-Grey_323941.jpg"
+    }
+  ],
+  "orders": [
+    {
+      "name": "Aiswarya R",
+      "phone": "9562152083",
+      "id": 1
+    },
+    {
+      "name": "Aiswarya R",
+      "phone": "9562152083",
+      "id": 2
+    },
+    {
+      "name": "Nimisha",
+      "phone": "9048934825",
+      "id": 3
+    }
+  ]
 }
